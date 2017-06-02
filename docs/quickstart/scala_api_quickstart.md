@@ -27,19 +27,19 @@ under the License.
 {:toc}
 
 
-## Build Tools
+## 构建工具
 
-Flink projects can be built with different build tools.
-In order to get quickly started, Flink provides project templates for the following build tools:
+Flink 工程 可以使用不同的构建工具构建。 
+为了可以快速启动, Flink 为以下构建工具提供了工程模板。
 
 - [SBT](#sbt)
 - [Maven](#maven)
 
-These templates help you to set up the project structure and to create the initial build files.
+这些模板可帮助您设置项目结构并创建初始构建文件。
 
 ## SBT
 
-### Create Project
+### 创建工程
 
 <ul class="nav nav-tabs" style="border-bottom: none;">
     <li class="active"><a href="#giter8" data-toggle="tab">Use <strong>Giter8</strong></a></li>
@@ -52,8 +52,8 @@ These templates help you to set up the project structure and to create the initi
     {% highlight bash %}
     $ g8 tillrohrmann/flink-project
     {% endhighlight %}
-    This will create a Flink project in the <strong>specified</strong> project directory from the <a href="https://github.com/tillrohrmann/flink-project.g8">flink-project template</a>.
-    If you haven't installed <a href="https://github.com/n8han/giter8">giter8</a>, then please follow this <a href="https://github.com/n8han/giter8#installation">installation guide</a>.
+    这将会创建一个 Flink工程在 <strong>指定的</strong> 工程目录 from the <a href="https://github.com/tillrohrmann/flink-project.g8">flink-project template</a>。
+    If you haven't installed <a href="https://github.com/n8han/giter8">giter8</a>, then please follow this <a href="https://github.com/n8han/giter8#installation">installation guide</a>.
     </div>
     <div class="tab-pane" id="clone-repository">
     {% highlight bash %}
@@ -69,17 +69,17 @@ These templates help you to set up the project structure and to create the initi
     </div>
 </div>
 
-### Build Project
+### 构建项目
 
-In order to build your project you simply have to issue the `sbt clean assembly` command.
-This will create the fat-jar __your-project-name-assembly-0.1-SNAPSHOT.jar__ in the directory __target/scala_your-major-scala-version/__.
+构建项目你只需要简单的执行命令 `sbt clean assembly`。
+这将创建 fat-jar __your-project-name-assembly-0.1-SNAPSHOT.jar__ 在__target/scala_your-major-scala-version/__目录下。
 
-### Run Project
+### 运行项目
 
-In order to run your project you have to issue the `sbt run` command.
+运行项目执行命令 `sbt run`。
 
-Per default, this will run your job in the same JVM as `sbt` is running.
-In order to run your job in a distinct JVM, add the following line to `build.sbt`
+默认情况下, 你的作业会运行在sbt运行的虚拟机中。
+如果想在不同的虚拟机中运行作业，将如下代码填加到 build.sbt 文件中。
 
 ~~~scala
 fork in run := true
@@ -88,7 +88,7 @@ fork in run := true
 
 #### IntelliJ
 
-We recommend using [IntelliJ](https://www.jetbrains.com/idea/) for your Flink job development.
+我们建议使用 [IntelliJ](https://www.jetbrains.com/idea/) for your Flink job development.
 In order to get started, you have to import your newly created project into IntelliJ.
 You can do this via `File -> New -> Project from Existing Sources...` and then choosing your project's directory.
 IntelliJ will then automatically detect the `build.sbt` file and set everything up.
